@@ -38,15 +38,19 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // El AppBar sustituye a la antigua cabecera naranja y da el botón del Drawer
-      appBar: AppBar(
-        title: const Text(
-          "Portfolio de Wilson",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        backgroundColor: AppColors.primary,
-        foregroundColor: Colors.white,
-      ),
+     appBar: AppBar(
+  title: const Text(
+    "Portfolio de Wilson",
+    style: TextStyle(fontWeight: FontWeight.bold),
+  ),
+  centerTitle: true,
+  backgroundColor: AppColors.drawerBackground,
+  foregroundColor: Colors.black, // texto e icono de hamburguesa en negro, como el Drawer
+  bottom: const PreferredSize(
+    preferredSize: Size.fromHeight(1.5),
+    child: Divider(height: 1.5, thickness: 1.5, color: Colors.black),
+  ),
+),
       drawer: const AppDrawer(),
       body: SafeArea(
         child: Column(
