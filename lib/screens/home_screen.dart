@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import '../widgets/app_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,34 +10,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Canarias Explorer"),
       ),
-
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                "Menú",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text("Bienvenida"),
-              onTap: () {
-                context.go('/bienvenida');
-              },
-            ),
-          ],
-        ),
-      ),
-
+      drawer: const AppDrawer(), // ahora reutilizamos el Drawer común
       body: const Center(
         child: Text(
           "Pantalla principal",
