@@ -1,11 +1,19 @@
+
 import 'package:flutter/material.dart';
-import 'screens/welcome_screen.dart';
+import 'app_router.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
-    ),
-  );
+      routerConfig: router,
+    );
+  }
 }
