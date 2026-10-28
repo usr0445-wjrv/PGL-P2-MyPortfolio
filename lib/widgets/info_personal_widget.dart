@@ -9,18 +9,33 @@ class InfoPersonalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
       width: double.infinity,
-      color: AppColors.infoBackground,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      decoration: BoxDecoration(
+        color: AppColors.infoBackground,
+        border: Border(
+          bottom: BorderSide(
+            color: AppColors.primaryDark.withValues(alpha: 0.25),
+          ),
+        ),
+      ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // FOTO (cambia según la pestaña seleccionada)
+          // FOTO con borde blanco y sombra
           Container(
-            width: 90,
-            height: 90,
+            width: 84,
+            height: 84,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
+              border: Border.all(color: Colors.white, width: 3),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.15),
+                  blurRadius: 8,
+                  offset: const Offset(0, 3),
+                ),
+              ],
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
@@ -31,12 +46,31 @@ class InfoPersonalWidget extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 15),
-          // TEXTO
+          const SizedBox(width: 16),
+          // NOMBRE + DESCRIPCIÓN
           const Expanded(
-            child: Text(
-              "Soy estudiante de Desarrollo de Aplicaciones Multiplataforma, y mi execelente profesor al que le gusta enrevesar prácticas es Adrian.",
-              style: TextStyle(fontSize: 16, color: Colors.black),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "Wilson",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryDark,
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  "Soy estudiante de Desarrollo de Aplicaciones Multiplataforma, y mi execelente profesor al que le gusta enrevesar prácticas es Adrian.",
+                  style: TextStyle(
+                    fontSize: 14.5,
+                    height: 1.4,
+                    color: Colors.black87,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

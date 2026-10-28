@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'cosa_random.dart';
+import 'hobby_card.dart';
 
 class BodyHobbiesWidget extends StatelessWidget {
   final List<String> hobbies;
@@ -14,7 +14,7 @@ class BodyHobbiesWidget extends StatelessWidget {
         for (final h in items)
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
-            child: CosaRandom(texto: h),
+            child: HobbyCard(texto: h),
           ),
       ],
     );

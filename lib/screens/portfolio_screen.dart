@@ -62,6 +62,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   : const BodyRepositorioWidget(),
             ),
             FooterBotonesWidget(
+              seleccionado: opcionBody,
               onTap: (value) => setState(() => opcionBody = value),
             ),
           ],
