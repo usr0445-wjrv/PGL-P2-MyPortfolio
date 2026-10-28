@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
 
 // Tarjeta reutilizable que muestra un hobby
 class HobbyCard extends StatelessWidget {
@@ -13,10 +12,9 @@ class HobbyCard extends StatelessWidget {
       width: 150,
       height: 48,
       decoration: BoxDecoration(
-        color: AppColors.hobbyFill,
-        borderRadius: BorderRadius.circular(12),
+        color: Colors.cyan[50],
         border: Border.all(
-          color: AppColors.primaryDark.withValues(alpha: 0.6),
+          color: Colors.blue[800]!.withValues(alpha: 0.6),
           width: 1.5,
         ),
         boxShadow: [

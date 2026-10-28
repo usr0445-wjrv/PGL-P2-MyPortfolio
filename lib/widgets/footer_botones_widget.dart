@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
 
 class FooterBotonesWidget extends StatelessWidget {
   final int seleccionado;
@@ -49,8 +48,8 @@ class FooterBotonesWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _boton("Hobbies", AppColors.primary, 0),
-          _boton("Repo", AppColors.accent, 1),
+          _boton("Hobbies", Colors.blue, 0),
+          _boton("Repo", Colors.cyan[600]!, 1),
         ],
       ),
     );

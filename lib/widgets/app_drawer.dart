@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../theme/app_colors.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
-  static const Color _fondo = AppColors.drawerBackground;
+  static const Color _fondo = const Color(0xFF99C7EE);
 
   Widget _opcion(BuildContext context, String texto, String ruta) {
     final rutaActual = GoRouterState.of(context).uri.path;

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
 import '../widgets/app_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +13,7 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: AppColors.drawerBackground,
+        backgroundColor: const Color(0xFF99C7EE),
         foregroundColor: Colors.black,
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1.5),

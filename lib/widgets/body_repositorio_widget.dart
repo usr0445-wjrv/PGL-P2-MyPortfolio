@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import '../theme/app_colors.dart';
 
 class BodyRepositorioWidget extends StatelessWidget {
   const BodyRepositorioWidget({super.key});
@@ -33,7 +32,7 @@ class BodyRepositorioWidget extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppColors.primary,
+                color: Colors.blue[800],
                 borderRadius: BorderRadius.circular(12),
               ),
               child: QrImageView(

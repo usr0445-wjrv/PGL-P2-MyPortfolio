@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
 import '../widgets/app_drawer.dart';
 import '../widgets/info_personal_widget.dart';
 import '../widgets/body_hobbies_widget.dart';
@@ -14,43 +13,25 @@ class PortfolioScreen extends StatefulWidget {
 }
 
 class _PortfolioScreenState extends State<PortfolioScreen> {
-  // 0 = Hobbies, 1 = Repo (ya no es una variable global)
+  // 0 = Hobbies, 1 = Repo
   int opcionBody = 0;
-
-  final List<String> hobbies = const [
-    "Salir a pasear",
-    "Programar",
-    "Ver peliculas",
-    "Ir a la playa",
-    "Videojuegos",
-    "Salir con amigos",
-    "Ver series",
-    "Dormir",
-    "Escuchar música",
-    "Anime",
-    "Jugar baloncesto",
-    "Aprender cosas nuevas",
-    "Viajar",
-    "Cocinar",
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // El AppBar sustituye a la antigua cabecera naranja y da el botón del Drawer
-     appBar: AppBar(
-  title: const Text(
-    "Portfolio de Wilson",
-    style: TextStyle(fontWeight: FontWeight.bold),
-  ),
-  centerTitle: true,
-  backgroundColor: AppColors.drawerBackground,
-  foregroundColor: Colors.black, // texto e icono de hamburguesa en negro, como el Drawer
-  bottom: const PreferredSize(
-    preferredSize: Size.fromHeight(1.5),
-    child: Divider(height: 1.5, thickness: 1.5, color: Colors.black),
-  ),
-),
+      appBar: AppBar(
+        title: const Text(
+          "Portfolio de Wilson",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        backgroundColor: const Color(0xFF99C7EE),
+        foregroundColor: Colors.black,
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1.5),
+          child: Divider(height: 1.5, thickness: 1.5, color: Colors.black),
+        ),
+      ),
       drawer: const AppDrawer(),
       body: SafeArea(
         child: Column(
@@ -58,7 +39,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
             InfoPersonalWidget(opcionBody: opcionBody),
             Expanded(
               child: opcionBody == 0
-                  ? BodyHobbiesWidget(hobbies: hobbies)
+                  ? const BodyHobbiesWidget()
                   : const BodyRepositorioWidget(),
             ),
             FooterBotonesWidget(

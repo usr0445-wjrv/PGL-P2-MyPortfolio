@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
 
 class InfoPersonalWidget extends StatelessWidget {
   final int opcionBody;
@@ -12,11 +11,9 @@ class InfoPersonalWidget extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       decoration: BoxDecoration(
-        color: AppColors.infoBackground,
+        color: Colors.blue[50],
         border: Border(
-          bottom: BorderSide(
-            color: AppColors.primaryDark.withValues(alpha: 0.25),
-          ),
+          bottom: BorderSide(color: Colors.blue[800]!.withValues(alpha: 0.25)),
         ),
       ),
       child: Row(
@@ -48,7 +45,7 @@ class InfoPersonalWidget extends StatelessWidget {
           ),
           const SizedBox(width: 16),
           // NOMBRE + DESCRIPCIÓN
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
@@ -58,11 +55,11 @@ class InfoPersonalWidget extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.primaryDark,
+                    color: Colors.blue[800],
                   ),
                 ),
-                SizedBox(height: 4),
-                Text(
+                const SizedBox(height: 4),
+                const Text(
                   "Soy estudiante de Desarrollo de Aplicaciones Multiplataforma, y mi execelente profesor al que le gusta enrevesar prácticas es Adrian.",
                   style: TextStyle(
                     fontSize: 14.5,
