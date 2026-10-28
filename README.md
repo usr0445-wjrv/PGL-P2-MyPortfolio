@@ -1,4 +1,4 @@
-# tareap2test
+# PGL-P2-MyPortfolio
 
 # 📄 **README.md — PGL-P2-MyPortfolio**
 
