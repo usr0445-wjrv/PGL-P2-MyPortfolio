@@ -57,6 +57,7 @@ class AppDrawer extends StatelessWidget {
 
             _opcion(context, "WELCOME", '/bienvenida'),
             _opcion(context, "PORTFOLIO", '/portfolio'),
+            _opcion(context, "LUGARES", '/lugares'), //AQUI SE AÑADE AL DRAWER LAS COSAS
           ],
         ),
       ),

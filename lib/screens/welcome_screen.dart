@@ -8,7 +8,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Barra como en tu diseño: hamburguesa a la izquierda y WELCOME en el centro
+      // Barra: hamburguesa a la izquierda y WELCOME en el centro
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
