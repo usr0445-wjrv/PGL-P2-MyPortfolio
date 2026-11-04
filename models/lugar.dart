@@ -1,3 +1,4 @@
+
 class Lugar {
   String nombre;
   String descripcion;
