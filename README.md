@@ -116,6 +116,12 @@ lib/
 
 ---
 
+### 🖼️ **Captura 5 — Lista (Añadir/Eliminar elementos)**
+
+![Lista](assets/images/captura5.png)
+
+---
+
 ## ▶️ **Cómo ejecutar el proyecto**
 
 ```
