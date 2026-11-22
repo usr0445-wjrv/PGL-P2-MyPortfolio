@@ -173,6 +173,28 @@ lib/
 
 ---
 
+### 🖼️ **Captura 7 — Registro exitoso**
+
+![Registro exitoso](assets/images/captura7.png)
+
+---
+
+### 🖼️ **Captura 8 — Login fallido**
+
+![Login fallido](assets/images/captura8.png)
+
+---
+
+### 🖼️ **Captura 9 — Login exitoso**
+
+![Login exitoso](assets/images/captura9.png)
+
+---
+
+### 🖼️ **Captura 10 — Mensaje de bienvenida (botón de la pantalla Bienvenida)**
+
+![Mensaje de bienvenida](assets/images/captura10.png)
+
 ## ▶️ **Cómo ejecutar el proyecto**
 
 ```
