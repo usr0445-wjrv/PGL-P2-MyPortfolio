@@ -7,10 +7,10 @@ class AuthService {
   static const String baseUrl = "https://my-users-api.onrender.com";
 
 
-  static const String rutaRegistro = "/register";
-  static const String rutaLogin = "/login";
-  static const String rutaBienvenida = "/";
-  static const String rutaValidar = "/welcome"; // ruta protegida para comprobar el token
+  static const String rutaRegistro = "/users/register";
+  static const String rutaLogin = "/users/login";
+  static const String rutaBienvenida = "/users/welcome";
+  static const String rutaValidar = "/users/check-token";
 
   // La API en Render puede tardar ~1 minuto en despertar
   static const Duration espera = Duration(seconds: 90);
@@ -39,9 +39,9 @@ class AuthService {
             Uri.parse(baseUrl + rutaRegistro),
             headers: {"Content-Type": "application/json"},
             body: jsonEncode({
-              "name": nombre, // AJUSTAR si la API usa otro nombre de campo
+              "fullName": nombre,
               "email": email,
-              "password": password,
+              "pwd": password,
             }),
           )
           .timeout(espera);
@@ -64,7 +64,7 @@ class AuthService {
           .post(
             Uri.parse(baseUrl + rutaLogin),
             headers: {"Content-Type": "application/json"},
-            body: jsonEncode({"email": email, "password": password}),
+            body: jsonEncode({"email": email, "pwd": password}),
           )
           .timeout(espera);
 
