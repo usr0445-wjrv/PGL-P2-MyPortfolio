@@ -13,7 +13,7 @@ class _LugaresScreenState extends State<LugaresScreen> {
   // Categorías que se pueden elegir en el selector
   final List<String> categorias = ["Playa", "Naturaleza", "Pueblo", "Mirador"];
 
-  // Lista de lugares (empieza con algunos de ejemplo)
+  // Lista de lugares
   final List<Lugar> lugares = [
     Lugar(
       nombre: "Playa de Papagayo",
@@ -35,6 +35,7 @@ class _LugaresScreenState extends State<LugaresScreen> {
       descripcion: "Vistas increíbles al mar.",
       categoria: "Mirador",
     ),
+
   ];
 
   // Devuelve la imagen que corresponde a cada categoría
@@ -96,7 +97,7 @@ class _LugaresScreenState extends State<LugaresScreen> {
                   ],
                 ),
               ),
-              actions: [
+               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(context),
                   child: const Text("Cancelar"),
