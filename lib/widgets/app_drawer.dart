@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../services/auth_service.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
-  static const Color _fondo = const Color(0xFF99C7EE);
+  static const Color _fondo = Color(0xFF99C7EE); // azul claro de tu concepto
 
   Widget _opcion(BuildContext context, String texto, String ruta) {
     final rutaActual = GoRouterState.of(context).uri.path;
@@ -27,6 +28,13 @@ class AppDrawer extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  // CERRAR SESIÓN: borra el token y vuelve al login
+  Future<void> _cerrarSesion(BuildContext context) async {
+    await AuthService.cerrarSesion();
+    if (!context.mounted) return;
+    context.go('/login');
   }
 
   @override
@@ -57,7 +65,25 @@ class AppDrawer extends StatelessWidget {
 
             _opcion(context, "WELCOME", '/bienvenida'),
             _opcion(context, "PORTFOLIO", '/portfolio'),
-            _opcion(context, "LUGARES", '/lugares'), //AQUI SE AÑADE AL DRAWER LAS COSAS
+            _opcion(context, "LUGARES", '/lugares'),
+
+            // Empuja el botón de cerrar sesión al final del menú
+            const Spacer(),
+            const Divider(height: 1, thickness: 1.5, color: Colors.black),
+            InkWell(
+              onTap: () => _cerrarSesion(context),
+              child: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "CERRAR SESIÓN",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
